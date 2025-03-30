@@ -1,0 +1,27 @@
+server:
+  port: 9091
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://locahost:8761/eureka/
+
+spring:
+  application:
+    name: RESTAURANT-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/devdb?allowPublicKeyRetrieval=true&useSSL=false
+    password: password
+    username: devuser
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+logging:
+  level:
+    org.flywaydb.core: DEBUG
