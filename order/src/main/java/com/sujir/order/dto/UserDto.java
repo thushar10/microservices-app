@@ -1,4 +1,4 @@
-package com.sujir.userinfo.dto;
+package com.sujir.order.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDto {
-
     private String userId;
     private String userName;
     private String userPassword;

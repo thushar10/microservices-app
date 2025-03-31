@@ -1,6 +1,5 @@
-package com.sujir.foodcatalogue.dto;
+package com.sujir.order.dto;
 
-import com.sujir.foodcatalogue.entity.FoodItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

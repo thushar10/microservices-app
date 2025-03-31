@@ -16,9 +16,38 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - dev-network
+  mongodb:
+    image: mongo:6.0
+    container_name: mongo-dev
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: devdb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - dev-network
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express-dev
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+      ME_CONFIG_MONGODB_SERVER: mongodb
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongodb
+    networks:
+      - dev-network
 
 volumes:
   mysql_data:
+  mongo_data:
 
 networks:
   dev-network:

@@ -42,7 +42,7 @@ public class FoodCatalogueService {
         if(restaurant != null) {
 
             FoodCataloguePage foodCataloguePage = new FoodCataloguePage();
-            foodCataloguePage.setFoodItemList(foodItems);
+            foodCataloguePage.setFoodItemList(foodItems.stream().map(foodItemMapper::mapFoodItemToFoodItemDto).toList());
             foodCataloguePage.setRestaurant(restaurant);
             return new ResponseEntity<>(foodCataloguePage, HttpStatus.OK);
 
