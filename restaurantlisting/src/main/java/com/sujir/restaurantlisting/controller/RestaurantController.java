@@ -33,7 +33,7 @@ public class RestaurantController {
     }
 
     @GetMapping("/fetchById/{id}")
-    public ResponseEntity<RestaurantDto> fetchById(@PathVariable Integer id) {
+    public ResponseEntity<RestaurantDto> fetchById(@PathVariable("id") Integer id) {
         return restaurantService.fetchById(id);
     }
 }

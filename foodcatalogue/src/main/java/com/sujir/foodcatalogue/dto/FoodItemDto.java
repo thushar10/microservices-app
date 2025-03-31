@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,7 +17,7 @@ public class FoodItemDto {
     private String itemName;
     private String itemDescription;
     private boolean isVeg;
-    private Number price;
+    private BigDecimal price;
     private Integer restaurantId;
     private int quantity;
 
