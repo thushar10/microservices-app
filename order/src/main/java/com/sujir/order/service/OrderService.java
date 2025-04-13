@@ -56,7 +56,7 @@ public class OrderService {
 
     private boolean validateFoodItems(int restaurantId, List<FoodItemDto> foodItemDtoListReq) {
         FoodCataloguePage foodCataloguePage = fetchFoodItems(restaurantId);
-        List<FoodItemDto> foodItemList =  foodCataloguePage.getFoodItemList();
+        List<FoodItemDto> foodItemList =  foodCataloguePage.getFoodItemsList();
 
 
         long count = foodItemList.stream().map(foodItemDto -> foodItemDtoListReq.stream().filter(foodItemDto1 ->
