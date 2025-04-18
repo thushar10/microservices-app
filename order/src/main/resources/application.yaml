@@ -1,17 +1,9 @@
 server:
   port: 9094
 
-eureka:
-  client:
-    service-url:
-      default-zone: http://locahost:8761/eureka/
-
 spring:
   application:
     name: ORDER-SERVICE
-  data:
-    mongodb:
-      uri: mongodb://root:password@localhost:27017/devdb?authSource=admin
 logging:
   level:
     org.flywaydb.core: DEBUG
